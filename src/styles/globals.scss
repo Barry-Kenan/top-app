@@ -1,0 +1,13 @@
+@use "../scssStyles" as s;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	color: s.$green;
+	font-family: s.$font-family;
+}
