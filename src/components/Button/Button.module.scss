@@ -1,0 +1,33 @@
+@use "../../scssStyles" as s;
+
+.button {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 14px;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s;
+
+	&.primary {
+		color: s.$white;
+		background-color: s.$primary;
+
+		&:hover {
+			background-color: s.$primary-hover;
+		}
+	}
+
+	&.ghost {
+		color: s.$black;
+		background: none;
+		border: 1px solid s.$gray-light;
+
+		&:hover {
+			color: s.$white;
+			background-color: s.$primary;
+		}
+	}
+}
