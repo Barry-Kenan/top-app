@@ -1,0 +1,17 @@
+@use "../../scssStyles" as *;
+
+.p {
+    margin: 0;
+
+    &.s {
+        @include rhythm(14, 24);
+    }
+
+    &.m {
+        @include rhythm(16, 24);
+    }
+
+    &.l {
+        @include rhythm(18, 29);
+    }
+}
