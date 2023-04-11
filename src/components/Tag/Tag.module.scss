@@ -1,0 +1,46 @@
+@use "../../scssStyles" as *;
+
+.tag {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 5px;
+    border-radius: 20px;
+
+    &.s {
+        padding: 5px 10px;
+        @include rhythm(12, 12);
+    }
+
+    &.m {
+        padding: 5px 10px;
+        @include rhythm(14, 14);
+    }
+
+    &.ghost {
+        border: 1px solid $gray-light;
+    }
+
+    &.red {
+        color: $white;
+        background: $red-dark;
+        font-weight: bold;
+    }
+
+    &.gray {
+        color: $white;
+        background: $gray-dark;
+        font-weight: bold;
+    }
+
+    &.green {
+        color: $green;
+        background: $green-light;
+        font-weight: bold;
+    }
+
+    &.primary {
+        color: $primary;
+        background: none;
+        border: 1px solid $primary;
+    }
+}
