@@ -23,9 +23,11 @@
         "typescript": "5.0.3"
     },
     "devDependencies": {
+        "@svgr/webpack": "^7.0.0",
         "@typescript-eslint/eslint-plugin": "^5.57.0",
         "@typescript-eslint/parser": "^5.57.0",
         "cross-env": "^7.0.3",
+        "eslint-plugin-react-hooks": "^4.6.0",
         "sass": "^1.60.0",
         "stylelint": "^15.4.0",
         "stylelint-config-rational-order": "^0.1.2",
