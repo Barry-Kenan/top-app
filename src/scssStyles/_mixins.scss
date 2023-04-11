@@ -1,0 +1,5 @@
+@mixin rhythm($size, $height, $weight: 500) {
+    font-size: $size + px;
+    line-height: $height + px;
+    font-weight: $weight;
+}
