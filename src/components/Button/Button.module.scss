@@ -1,33 +1,51 @@
-@use "../../scssStyles" as s;
+@use "../../scssStyles" as *;
 
 .button {
-	display: inline-block;
-	box-sizing: border-box;
-	padding: 10px;
-	font-size: 14px;
-	text-align: center;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: all 0.2s;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
 
-	&.primary {
-		color: s.$white;
-		background-color: s.$primary;
+    &.primary {
+        color: $white;
+        background-color: $primary;
 
-		&:hover {
-			background-color: s.$primary-hover;
-		}
-	}
+        svg {
+            fill: $white;
+        }
 
-	&.ghost {
-		color: s.$black;
-		background: none;
-		border: 1px solid s.$gray-light;
+        &:hover {
+            background-color: $primary-hover;
+        }
+    }
 
-		&:hover {
-			color: s.$white;
-			background-color: s.$primary;
-		}
-	}
+    &.ghost {
+        color: $black;
+        background: none;
+        border: 1px solid $gray-light;
+
+        &:hover {
+            color: $white;
+            background-color: $primary;
+
+            svg {
+                fill: $white;
+            }
+        }
+    }
+
+    .arrow {
+        display: inline-block;
+        margin-left: 10px;
+
+        &.down {
+            transform: rotate(90deg);
+            transition: all 0.2s;
+        }
+    }
 }
