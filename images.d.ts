@@ -4,7 +4,7 @@ declare module "*.svg" {
      * `@svgr/webpack` plugin or
      * `babel-plugin-inline-react-svg` plugin.
      */
-    const content: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
+    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;
 }
 // this file is conditionally added/removed to next-env.d.ts
