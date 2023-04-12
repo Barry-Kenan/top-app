@@ -1,0 +1,25 @@
+@use "../../scssStyles" as *;
+.footer {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px 40px;
+    padding: 25px 30px;
+    @include rhythm(16, 20);
+    background: $primary;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+            color: $gray-light;
+        }
+    }
+}
+
+@include for-size(tablet) {
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
