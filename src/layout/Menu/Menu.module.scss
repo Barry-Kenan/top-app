@@ -1,0 +1,59 @@
+@use "../../scssStyles" as *;
+.menu {
+    .firstLevel {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 20px;
+        margin-top: 20px;
+        align-items: center;
+        @include rhythm(18, 25);
+
+        &.firstLevelActive,
+        &:hover {
+            color: $primary;
+
+            svg {
+                fill: $primary;
+            }
+        }
+    }
+
+    .secondBlock {
+        margin-top: 15px;
+        margin-left: 12px;
+        padding-left: 32px;
+        border-left: 1px solid $gray-light;
+
+        .secondLevel {
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: $gray;
+            @include rhythm(12, 16, 300);
+        }
+
+        .secondLevelBlock {
+            display: none;
+
+            &.secondLevelBlockOpened {
+                display: block;
+                &:last-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .thirdLevel {
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: $gray-dark;
+        @include rhythm(14, 19);
+
+        &.thirdLevelActive,
+        &:hover {
+            color: $primary;
+        }
+    }
+}
