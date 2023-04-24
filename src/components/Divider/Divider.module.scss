@@ -1,0 +1,13 @@
+@use "../../scssStyles" as *;
+.horizontal {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: $gray-light;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vertical {
+    border-left: 1px solid $gray-light;
+}
