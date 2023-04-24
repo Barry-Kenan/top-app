@@ -7,3 +7,4 @@ export { default as Card } from "./Card/Card";
 export { default as HhData } from "./HhData/HhData";
 export { default as Divider } from "./Divider/Divider";
 export { default as Advantages } from "./Advantages/Advantages";
+export { default as Sort } from "./Sort/Sort";
