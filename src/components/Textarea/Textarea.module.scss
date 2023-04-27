@@ -1,0 +1,18 @@
+@use "../../scssStyles" as *;
+
+.textarea {
+    padding: 7px 15px;
+    width: 100%;
+    color: $black;
+    border: none;
+    outline-color: $primary;
+    background: $white;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    @include rhythm(16, 22, 500);
+    font-family: $font-family;
+
+    &::placeholder {
+        color: $gray;
+    }
+}
