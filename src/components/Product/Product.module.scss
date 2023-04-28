@@ -1,0 +1,277 @@
+@use "../../scssStyles" as *;
+.product {
+    display: grid;
+    grid-template-columns:
+        [start logo-start] 70px [logo-end] 30px
+        [title-start] calc(50% - 100px) [title-end middle] 1fr
+        [price-start] auto [price-end] 40px [credit-start] auto[credit-end] 40px
+        [rate-start] auto [rate-end end];
+    margin-top: 30px;
+    padding: 30px;
+
+    .logo {
+        grid-column: logo;
+        grid-row: 1 / span 2;
+    }
+
+    .title,
+    .tags {
+        grid-column: title;
+    }
+
+    .price,
+    .priceTitle {
+        grid-column: price;
+    }
+
+    .credit,
+    .creditTitle {
+        grid-column: credit;
+        white-space: nowrap;
+    }
+
+    .rating,
+    .rateTitle {
+        grid-column: rate;
+        white-space: nowrap;
+    }
+
+    .hr,
+    .description,
+    .actions {
+        grid-column: start / end;
+    }
+    .feature {
+        grid-column: start / middle;
+    }
+
+    .advBlock {
+        grid-column: middle / end;
+    }
+
+    .logo img {
+        border-radius: 5px;
+    }
+
+    .title {
+        @include rhythm(20, 27, 600);
+        align-self: flex-end;
+    }
+
+    .category {
+        margin-top: 5px;
+    }
+
+    .price,
+    .credit {
+        @include rhythm(20, 27);
+        align-self: flex-end;
+    }
+
+    .month {
+        @include rhythm(14, 19);
+    }
+
+    .oldPrice {
+        margin-left: 5px;
+    }
+    .rating {
+        align-self: flex-end;
+    }
+
+    .priceTitle,
+    .creditTitle,
+    .rateTitle {
+        @include rhythm(14, 19, 300);
+    }
+
+    .description {
+        @include rhythm(16, 24);
+        margin-bottom: 15px;
+    }
+
+    .reviewButton {
+        margin-left: 10px;
+    }
+
+    .advBlock {
+        @include rhythm(16, 22);
+        .advantages {
+            border-left: 2px solid $green;
+            padding-left: 15px;
+            margin-bottom: 20px;
+
+            .advTitle {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+        }
+
+        .disadvantages {
+            border-left: 2px solid $red;
+            padding-left: 15px;
+        }
+    }
+
+    .characteristics {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: baseline;
+        gap: 10px;
+        padding-right: 60px;
+        @include rhythm(16, 32);
+
+        .characteristicsName {
+            font-weight: bold;
+        }
+
+        .characteristicsDots {
+            border-bottom: 1px dashed $gray-light;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.reviews {
+    &.closed {
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+    }
+
+    &.opened {
+        max-height: auto;
+        padding: 30px;
+    }
+}
+
+@include for-size(desktopPlus) {
+    .product {
+        grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+        grid-template-areas:
+            "logo . title title title title title"
+            "logo . tags tags tags tags tags"
+            "price price price . credit . rating"
+            "priceTitle priceTitle priceTitle . creditTitle . rateTitle"
+            "hr hr hr hr hr hr hr"
+            "description description description description description description description"
+            "feature feature feature feature feature feature feature"
+            "advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+            "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+            "actions actions actions actions actions actions actions";
+
+        .logo {
+            grid-area: logo;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            grid-area: title;
+        }
+
+        .tags {
+            grid-area: tags;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            grid-area: price;
+        }
+
+        .credit {
+            grid-area: credit;
+        }
+
+        .rating {
+            grid-area: rating;
+        }
+
+        .priceTitle {
+            grid-area: priceTitle;
+        }
+
+        .creditTitle {
+            grid-area: creditTitle;
+        }
+
+        .rateTitle {
+            grid-area: rateTitle;
+        }
+
+        .hr {
+            grid-area: hr;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        .feature {
+            grid-area: feature;
+            margin-bottom: 20px;
+        }
+
+        .advBlock {
+            grid-area: advBlock;
+        }
+
+        .hr2 {
+            grid-area: hr2;
+        }
+
+        .actions {
+            grid-area: actions;
+        }
+    }
+}
+
+@include for-size(phone) {
+    .product {
+        grid-template-columns: 70px 30px 1fr;
+        grid-template-areas:
+            "logo . title"
+            "logo . tags"
+            "priceTitle priceTitle price"
+            "creditTitle creditTitle credit"
+            "rateTitle rateTitle rating"
+            "hr hr hr"
+            "description description description"
+            "feature feature feature"
+            "advBlock advBlock advBlock"
+            "hr2 hr2 hr2"
+            "actions actions actions";
+        .price {
+            margin-bottom: 10px;
+        }
+
+        .credit {
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@include for-size(miniPhone) {
+    .product {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "logo"
+            "title"
+            "tags"
+            "price"
+            "priceTitle"
+            "credit"
+            "creditTitle"
+            "rating"
+            "rateTitle"
+            "hr"
+            "description"
+            "feature"
+            "advBlock"
+            "hr2"
+            "actions";
+    }
+}
