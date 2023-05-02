@@ -79,6 +79,12 @@
         align-self: flex-end;
     }
 
+    .rateTitle {
+        a {
+            color: $primary;
+        }
+    }
+
     .priceTitle,
     .creditTitle,
     .rateTitle {
