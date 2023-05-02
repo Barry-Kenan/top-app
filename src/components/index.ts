@@ -14,3 +14,5 @@ export { default as Search } from "./Search/Search";
 export { default as Product } from "./Product/Product";
 export { default as Review } from "./Review/Review";
 export { default as ReviewForm } from "./ReviewForm/ReviewForm";
+export { default as Up } from "./Up/Up";
+export { default as ButtonIcon } from "./ButtonIcon/ButtonIcon";
