@@ -1,78 +1,82 @@
 @use "../../scssStyles" as *;
+
 .hh {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 30px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 30px;
 
-    .count {
-        padding: 20px;
-        text-align: center;
+	.count {
+		padding: 20px;
+		text-align: center;
 
-        .countValue {
-            @include rhythm(36, 49, bold);
-            color: $primary;
-        }
-    }
+		.countValue {
+			@include rhythm(36, 49, bold);
 
-    .salary {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 20px;
-        text-align: center;
-        gap: 20px 0;
+			color: $primary;
+		}
+	}
 
-        & > div {
-            border-right: 1px solid $gray-light;
+	.salary {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px 0;
+		padding: 20px;
+		text-align: center;
 
-            &:last-child {
-                border-right: none;
-            }
-        }
+		& > div {
+			border-right: 1px solid $gray-light;
 
-        .salaryValue {
-            @include rhythm(26, 35, bold);
-            margin-bottom: 10px;
-        }
+			&:last-child {
+				border-right: none;
+			}
+		}
 
-        .rate {
-            display: grid;
-            grid-template-columns: repeat(3, 20px);
-            gap: 10px;
-            justify-content: center;
+		.salaryValue {
+			@include rhythm(26, 35, bold);
 
-            .filled circle {
-                fill: $red;
-            }
-        }
-    }
+			margin-bottom: 10px;
+		}
 
-    .title {
-        @include rhythm(20, 27, 300);
-        margin-bottom: 10px;
-    }
+		.rate {
+			display: grid;
+			grid-template-columns: repeat(3, 20px);
+			gap: 10px;
+			justify-content: center;
+
+			.filled circle {
+				fill: $red;
+			}
+		}
+	}
+
+	.title {
+		@include rhythm(20, 27, 300);
+
+		margin-bottom: 10px;
+	}
 }
 
 @include for-size(desktop) {
-    .hh {
-        grid-template-columns: 1fr;
-    }
+	.hh {
+		grid-template-columns: 1fr;
+	}
 }
 
 @include for-size(phone) {
-    .hh {
-        .salary {
-            grid-template-columns: 1fr;
+	.hh {
+		.salary {
+			grid-template-columns: 1fr;
 
-            & > div {
-                border-right: none;
-                border-bottom: 1px solid $gray-light;
-                padding-bottom: 20px;
+			& > div {
+				padding-bottom: 20px;
+				border-right: none;
+				border-bottom: 1px solid $gray-light;
 
-                &:last-child {
-                    border-bottom: none;
-                    padding-bottom: 0;
-                }
-            }
-        }
-    }
+				&:last-child {
+					padding-bottom: 0;
+					border-bottom: none;
+				}
+			}
+		}
+	}
 }
