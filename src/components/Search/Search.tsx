@@ -14,12 +14,12 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         router.push({
             pathname: "/search",
             query: {
-                q: search,
+                name: search,
             },
         });
     };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key == "Enter") {
             goToSearch();
         }
