@@ -33,14 +33,7 @@
         }
 
         .secondLevelBlock {
-            display: none;
-
-            &.secondLevelBlockOpened {
-                display: block;
-                &:last-child {
-                    margin-bottom: 20px;
-                }
-            }
+            overflow: hidden;
         }
     }
 
