@@ -12,7 +12,7 @@ import { IReviewForm, IReviewSentResponse } from "./ReviewForm.interface";
 import axios from "axios";
 import { API } from "@/helpers/api";
 
-const Review = ({
+const ReviewForm = ({
     productId,
     className,
     ...props
@@ -133,4 +133,4 @@ const Review = ({
     );
 };
 
-export default Review;
+export default ReviewForm;
