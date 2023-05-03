@@ -1,33 +1,31 @@
 @use "../../scssStyles" as *;
 
 .inputWrapper {
-	position: relative;
+    position: relative;
+    .input {
+        padding: 7px 15px;
+        color: $black;
+        border: none;
+        outline-color: $primary;
+        background: $white;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+        border-radius: 5px;
+        @include rhythm(16, 22, 500);
+        font-family: $font-family;
 
-	.input {
-		padding: 7px 15px;
-		color: $black;
-		font-family: $font-family;
-		background: $white;
-		border: none;
-		border-radius: 5px;
-		outline-color: $primary;
-		box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+        &::placeholder {
+            color: $gray;
+        }
 
-		@include rhythm(16, 22, 500);
+        &.error {
+            border: 1px solid var(--red);
+        }
+    }
 
-		&::placeholder {
-			color: $gray;
-		}
-
-		&.error {
-			border: 1px solid var(--red);
-		}
-	}
-
-	.errorMessage {
-		position: absolute;
-		bottom: -20px;
-		left: 5px;
-		color: $red;
-	}
+    .errorMessage {
+        position: absolute;
+        bottom: -20px;
+        left: 5px;
+        color: $red;
+    }
 }

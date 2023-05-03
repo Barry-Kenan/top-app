@@ -1,44 +1,39 @@
 @use "../../scssStyles/" as *;
-
 .review {
-	display: grid;
-	grid-template-columns: [start] auto 1fr auto auto [end];
-	gap: 10px;
-	align-items: center;
+    display: grid;
+    grid-template-columns: [start] auto 1fr auto auto [end];
+    align-items: center;
+    gap: 10px;
+    @include rhythm(14, 24);
 
-	@include rhythm(14, 24);
+    .description {
+        grid-column: start / end;
+    }
 
-	.description {
-		grid-column: start / end;
-	}
-
-	.date {
-		margin-right: 10px;
-	}
-
-	.name {
-		font-weight: bold;
-	}
-
-	.rating {
-		white-space: nowrap;
-	}
+    .date {
+        margin-right: 10px;
+    }
+    .name {
+        font-weight: bold;
+    }
+    .rating {
+        white-space: nowrap;
+    }
 }
 
 @include for-size(phone) {
-	.review {
-		grid-template-columns: [start] 30px [title-start] auto [date-end] 1fr [title-end end];
+    .review {
+        grid-template-columns: [start] 30px [title-start] auto [date-end] 1fr [title-end end];
+        .title {
+            grid-column: title;
+        }
 
-		.title {
-			grid-column: title;
-		}
+        .date {
+            grid-column: start / end;
+        }
 
-		.date {
-			grid-column: start / end;
-		}
-
-		.rating {
-			grid-column: start / end;
-		}
-	}
+        .rating {
+            grid-column: start / end;
+        }
+    }
 }

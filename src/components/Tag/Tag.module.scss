@@ -1,48 +1,46 @@
 @use "../../scssStyles" as *;
 
 .tag {
-	display: inline-block;
-	box-sizing: border-box;
-	margin-right: 5px;
-	border-radius: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 5px;
+    border-radius: 20px;
 
-	&.s {
-		padding: 5px 10px;
+    &.s {
+        padding: 5px 10px;
+        @include rhythm(12, 12);
+    }
 
-		@include rhythm(12, 12);
-	}
+    &.m {
+        padding: 5px 10px;
+        @include rhythm(14, 14);
+    }
 
-	&.m {
-		padding: 5px 10px;
+    &.ghost {
+        border: 1px solid $gray-light;
+    }
 
-		@include rhythm(14, 14);
-	}
+    &.red {
+        color: $white;
+        background: $red-dark;
+        font-weight: bold;
+    }
 
-	&.ghost {
-		border: 1px solid $gray-light;
-	}
+    &.gray {
+        color: $white;
+        background: $gray-dark;
+        font-weight: bold;
+    }
 
-	&.red {
-		color: $white;
-		font-weight: bold;
-		background: $red-dark;
-	}
+    &.green {
+        color: $green;
+        background: $green-light;
+        font-weight: bold;
+    }
 
-	&.gray {
-		color: $white;
-		font-weight: bold;
-		background: $gray-dark;
-	}
-
-	&.green {
-		color: $green;
-		font-weight: bold;
-		background: $green-light;
-	}
-
-	&.primary {
-		color: $primary;
-		background: none;
-		border: 1px solid $primary;
-	}
+    &.primary {
+        color: $primary;
+        background: none;
+        border: 1px solid $primary;
+    }
 }

@@ -1,56 +1,52 @@
 @use "../../scssStyles" as *;
-
 .menu {
-	.firstLevel {
-		display: grid;
-		grid-template-columns: 24px 1fr;
-		gap: 20px;
-		align-items: center;
-		margin-top: 20px;
+    .firstLevel {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        gap: 20px;
+        margin-top: 20px;
+        align-items: center;
+        @include rhythm(18, 25);
 
-		@include rhythm(18, 25);
+        &.firstLevelActive,
+        &:hover {
+            color: $primary;
 
-		&.firstLevelActive,
-		&:hover {
-			color: $primary;
+            svg {
+                fill: $primary;
+            }
+        }
+    }
 
-			svg {
-				fill: $primary;
-			}
-		}
-	}
+    .secondBlock {
+        margin-top: 15px;
+        margin-left: 12px;
+        padding-left: 32px;
+        border-left: 1px solid $gray-light;
 
-	.secondBlock {
-		margin-top: 15px;
-		margin-left: 12px;
-		padding-left: 32px;
-		border-left: 1px solid $gray-light;
+        .secondLevel {
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            color: $gray;
+            @include rhythm(12, 16, 300);
+        }
 
-		.secondLevel {
-			margin-bottom: 10px;
-			color: $gray;
-			text-transform: uppercase;
-			cursor: pointer;
+        .secondLevelBlock {
+            overflow: hidden;
+        }
+    }
 
-			@include rhythm(12, 16, 300);
-		}
+    .thirdLevel {
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: $gray-dark;
+        @include rhythm(14, 19);
 
-		.secondLevelBlock {
-			overflow: hidden;
-		}
-	}
-
-	.thirdLevel {
-		display: block;
-		margin-bottom: 10px;
-		color: $gray-dark;
-		cursor: pointer;
-
-		@include rhythm(14, 19);
-
-		&.thirdLevelActive,
-		&:hover {
-			color: $primary;
-		}
-	}
+        &.thirdLevelActive,
+        &:hover {
+            color: $primary;
+        }
+    }
 }
