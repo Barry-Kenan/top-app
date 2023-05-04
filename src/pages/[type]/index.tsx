@@ -5,12 +5,14 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
 import { API } from "@/helpers/api";
+import { withLayout } from "@/layout/Layout";
+import { TopLevelCategory } from "@/interfaces/page.interface";
 
 const Type = ({ firstCategory, menu }: TypeProps): JSX.Element => {
-    return <div>Type:{firstCategory}</div>;
+    return <div>{TopLevelCategory[firstCategory]}</div>;
 };
 
-export default Type;
+export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
