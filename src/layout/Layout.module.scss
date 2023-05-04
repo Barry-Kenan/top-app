@@ -1,14 +1,14 @@
 @use "../scssStyles" as *;
+
 .wrapper {
     display: grid;
-    min-height: 100vh;
-    grid-template-columns: auto 230px minmax(320px, 1200px) auto;
-    grid-template-rows: auto 1fr auto;
+    grid-template:
+        ". header header ." auto
+        ". sidebar body ." 1fr
+        "footer footer footer footer" auto
+        / auto 230px minmax(320px, 1200px) auto;
     gap: 40px 30px;
-    grid-template-areas:
-        ". header header ."
-        ". sidebar body ."
-        "footer footer footer footer";
+    min-height: 100vh;
 
     .header {
         grid-area: header;
@@ -17,23 +17,25 @@
     .sidebar {
         grid-area: sidebar;
     }
+
     .body {
         grid-area: body;
         outline: none;
     }
+
     .footer {
         grid-area: footer;
     }
 
     .skipLink {
-        display: block;
         position: fixed;
-        left: 100px;
         top: 0;
-        overflow: hidden;
+        left: 100px;
+        display: block;
         height: 0;
-        background: $primary;
+        overflow: hidden;
         color: $white;
+        background: $primary;
 
         &.displayed {
             height: auto;
@@ -43,11 +45,11 @@
 
 @include for-size(tablet) {
     .wrapper {
-        grid-template-columns: minmax(320px, 1fr);
         grid-template-areas:
             "header"
             "body"
             "footer";
+        grid-template-columns: minmax(320px, 1fr);
 
         .sidebar {
             display: none;

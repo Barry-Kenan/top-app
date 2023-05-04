@@ -1,26 +1,26 @@
 @use "../scssStyles" as *;
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: $font-family;
-    color: $black;
-    background: #f5f6f8;
+	margin: 0;
+	padding: 0;
+	color: $black;
+	font-family: $font-family;
+	background: #F5F6F8;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .visuallyHidden {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    position: absolute;
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
 }

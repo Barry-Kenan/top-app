@@ -1,38 +1,43 @@
 @use "../../scssStyles" as *;
+
 .sort {
-    display: inline-block;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 40px;
+	display: inline-block;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
 
-    button {
-        display: grid;
-        gap: 8px;
-        grid-template-columns: 20px 1fr;
-        align-items: center;
-        cursor: pointer;
-        border: none;
-        background: none;
-        @include rhythm(16, 22, 500);
+	button {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		gap: 8px;
+		align-items: center;
+		background: none;
+		border: none;
+		cursor: pointer;
 
-        &:not(.active) {
-            grid-template-columns: 1fr;
-        }
-    }
+		@include rhythm(16, 22, 500);
 
-    .sortName {
-        display: none;
-    }
+		&:not(.active) {
+			grid-template-columns: 1fr;
+		}
+	}
 
-    .sortIcon {
-        display: none;
-    }
-    .active {
-        @include rhythm(16, 16, bold);
-        color: $primary;
-        .sortIcon {
-            display: block;
-            margin-right: 8px;
-        }
-    }
+	.sortName {
+		display: none;
+	}
+
+	.sortIcon {
+		display: none;
+	}
+
+	.active {
+		@include rhythm(16, 16, bold);
+
+		color: $primary;
+
+		.sortIcon {
+			display: block;
+			margin-right: 8px;
+		}
+	}
 }

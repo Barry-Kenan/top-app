@@ -1,30 +1,32 @@
 @use "../../scssStyles" as *;
 
 .filled svg {
-    fill: $primary;
+	fill: $primary;
 }
 
 .star {
-    display: inline-block;
-    svg {
-        margin-right: 5px;
-    }
+	display: inline-block;
+
+	svg {
+		margin-right: 5px;
+	}
 }
 
 .editable {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .ratingWrapper {
-    position: relative;
-    &.error {
-        stroke: $red;
-    }
+	position: relative;
 
-    .errorMessage {
-        position: absolute;
-        bottom: -20px;
-        left: 5px;
-        color: $red;
-    }
+	&.error {
+		stroke: $red;
+	}
+
+	.errorMessage {
+		position: absolute;
+		bottom: -20px;
+		left: 5px;
+		color: $red;
+	}
 }

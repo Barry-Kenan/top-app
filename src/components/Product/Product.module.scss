@@ -1,4 +1,5 @@
 @use "../../scssStyles" as *;
+
 .product {
     display: grid;
     grid-template-columns:
@@ -10,8 +11,8 @@
     padding: 30px;
 
     .logo {
-        grid-column: logo;
         grid-row: 1 / span 2;
+        grid-column: logo;
     }
 
     .title,
@@ -41,12 +42,31 @@
     .actions {
         grid-column: start / end;
     }
+
     .feature {
         grid-column: start / middle;
     }
 
     .advBlock {
         grid-column: middle / end;
+
+        @include rhythm(16, 22);
+
+        .advantages {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid $green;
+
+            .advTitle {
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+        }
+
+        .disadvantages {
+            padding-left: 15px;
+            border-left: 2px solid $red;
+        }
     }
 
     .logo img {
@@ -55,6 +75,7 @@
 
     .title {
         @include rhythm(20, 27, 600);
+
         align-self: flex-end;
     }
 
@@ -65,6 +86,7 @@
     .price,
     .credit {
         @include rhythm(20, 27);
+
         align-self: flex-end;
     }
 
@@ -75,6 +97,7 @@
     .oldPrice {
         margin-left: 5px;
     }
+
     .rating {
         align-self: flex-end;
     }
@@ -93,6 +116,7 @@
 
     .description {
         @include rhythm(16, 24);
+
         margin-bottom: 15px;
     }
 
@@ -100,31 +124,13 @@
         margin-left: 10px;
     }
 
-    .advBlock {
-        @include rhythm(16, 22);
-        .advantages {
-            border-left: 2px solid $green;
-            padding-left: 15px;
-            margin-bottom: 20px;
-
-            .advTitle {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-        }
-
-        .disadvantages {
-            border-left: 2px solid $red;
-            padding-left: 15px;
-        }
-    }
-
     .characteristics {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        align-items: baseline;
         gap: 10px;
+        align-items: baseline;
         padding-right: 60px;
+
         @include rhythm(16, 32);
 
         .characteristicsName {
@@ -132,20 +138,19 @@
         }
 
         .characteristicsDots {
-            border-bottom: 1px dashed $gray-light;
             margin-bottom: 5px;
+            border-bottom: 1px dashed $gray-light;
         }
     }
 }
 
 .reviews {
-    overflow: hidden;
     padding: 30px;
+    overflow: hidden;
 }
 
 @include for-size(desktopPlus) {
     .product {
-        grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
         grid-template-areas:
             "logo . title title title title title"
             "logo . tags tags tags tags tags"
@@ -157,6 +162,7 @@
             "advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
             "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
             "actions actions actions actions actions actions actions";
+        grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
 
         .logo {
             grid-area: logo;
@@ -225,7 +231,6 @@
 
 @include for-size(phone) {
     .product {
-        grid-template-columns: 70px 30px 1fr;
         grid-template-areas:
             "logo . title"
             "logo . tags"
@@ -238,6 +243,8 @@
             "advBlock advBlock advBlock"
             "hr2 hr2 hr2"
             "actions actions actions";
+        grid-template-columns: 70px 30px 1fr;
+
         .price {
             margin-bottom: 10px;
         }
@@ -254,7 +261,6 @@
 
 @include for-size(miniPhone) {
     .product {
-        grid-template-columns: 1fr;
         grid-template-areas:
             "logo"
             "title"
@@ -271,5 +277,6 @@
             "advBlock"
             "hr2"
             "actions";
+        grid-template-columns: 1fr;
     }
 }

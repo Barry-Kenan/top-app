@@ -1,79 +1,83 @@
 @use "../../scssStyles/" as *;
+
 .reviewForm {
-    display: grid;
-    align-items: center;
-    grid-template-columns: [start] auto 1fr auto [end];
-    gap: 20px 30px;
-    @include rhythm(14, 24);
+	display: grid;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
+	align-items: center;
 
-    .description,
-    .submit {
-        grid-column: start / end;
-    }
+	@include rhythm(14, 24);
 
-    .title {
-        justify-self: left;
-    }
+	.description,
+	.submit {
+		grid-column: start / end;
+	}
 
-    .info {
-        margin-left: 15px;
-    }
+	.title {
+		justify-self: left;
+	}
 
-    .rating {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 20px;
-        white-space: nowrap;
-    }
+	.info {
+		margin-left: 15px;
+	}
+
+	.rating {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 20px;
+		white-space: nowrap;
+	}
 }
 
 .panel {
-    padding: 20px;
-    position: relative;
-    border-radius: 5px;
-    margin-top: 20px;
+	position: relative;
+	margin-top: 20px;
+	padding: 20px;
+	border-radius: 5px;
 
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        border: none;
-        background: none;
-    }
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: none;
+		border: none;
+	}
 
-    &.success {
-        background: $green-light;
-        .successTitle {
-            font-weight: bold;
-        }
-    }
+	&.success {
+		background: $green-light;
 
-    &.error {
-        background: $red-light;
+		.successTitle {
+			font-weight: bold;
+		}
+	}
 
-        .close {
-            path {
-                stroke: $red;
-            }
-        }
-    }
+	&.error {
+		background: $red-light;
+
+		.close {
+			path {
+				stroke: $red;
+			}
+		}
+	}
 }
 
 @include for-size(desktop) {
-    .reviewForm {
-        grid-template-columns: [start] 1fr 1fr [end];
-        .title {
-            justify-self: normal;
-        }
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
 
-        .rating {
-            grid-column: start / end;
-        }
-    }
+		.title {
+			justify-self: normal;
+		}
+
+		.rating {
+			grid-column: start / end;
+		}
+	}
 }
 
 @include for-size(phone) {
-    .reviewForm {
-        grid-template-columns: [start] 1fr [end];
-    }
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }
