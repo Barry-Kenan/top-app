@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import styles from "./Search.module.scss";
 import cn from "classnames";
 import { SearchProps } from "./Search.props";
@@ -19,13 +19,13 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         });
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key == "Enter") {
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.code == "Enter") {
             goToSearch();
         }
     };
     return (
-        <form className={cn(className, styles.search)} {...props}>
+        <form className={cn(className, styles.search)} {...props} role="search">
             <Input
                 className={styles.input}
                 placeholder="Поиск..."
@@ -37,6 +37,7 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
                 appearance="primary"
                 className={styles.button}
                 onClick={goToSearch}
+                aria-label="Искать по сайту"
             >
                 <GlassIcon />
             </Button>

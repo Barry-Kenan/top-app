@@ -35,6 +35,7 @@ const Product = motion(
                         behavior: "smooth",
                         block: "start",
                     });
+                    reviewRef.current?.focus();
                 };
 
                 return (
@@ -53,12 +54,18 @@ const Product = motion(
                             </div>
                             <div className={styles.title}>{product.title}</div>
                             <div className={styles.price}>
-                                {priceRu(product.price)}
+                                <span>
+                                    <span className="visuallyHidden">Цена</span>
+                                    {priceRu(product.price)}
+                                </span>
                                 {product.oldPrice && (
                                     <Tag
                                         className={styles.oldPrice}
                                         color="green"
                                     >
+                                        <span className="visuallyHidden">
+                                            Скидка
+                                        </span>
                                         {priceRu(
                                             product.price - product.oldPrice
                                         )}
@@ -66,10 +73,16 @@ const Product = motion(
                                 )}
                             </div>
                             <div className={styles.credit}>
+                                <span className="visuallyHidden">Кредит</span>
                                 {priceRu(product.credit)}/
                                 <span className={styles.month}>мес</span>
                             </div>
                             <div className={styles.rating}>
+                                <span className="visuallyHidden">
+                                    {"рейтинг" +
+                                        (product.reviewAvg ??
+                                            product.initialRating)}
+                                </span>
                                 <Rating
                                     rating={
                                         product.reviewAvg ??
@@ -162,6 +175,7 @@ const Product = motion(
                                     onClick={() =>
                                         setIsReviewOpened(!isReviewOpened)
                                     }
+                                    aria-expanded={isReviewOpened}
                                 >
                                     Читать отзывы
                                 </Button>
@@ -176,6 +190,7 @@ const Product = motion(
                                 color="blue"
                                 className={styles.reviews}
                                 ref={reviewRef}
+                                tabIndex={isReviewOpened ? 0 : -1}
                             >
                                 {product.reviews.map((r) => (
                                     <div key={r._id}>
@@ -183,7 +198,10 @@ const Product = motion(
                                         <Divider />
                                     </div>
                                 ))}
-                                <ReviewForm productId={product._id} />
+                                <ReviewForm
+                                    productId={product._id}
+                                    isOpened={isReviewOpened}
+                                />
                             </Card>
                         </motion.div>
                     </div>

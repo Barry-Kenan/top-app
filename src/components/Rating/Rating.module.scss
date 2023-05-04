@@ -4,8 +4,11 @@
     fill: $primary;
 }
 
-.star svg {
-    margin-right: 5px;
+.star {
+    display: inline-block;
+    svg {
+        margin-right: 5px;
+    }
 }
 
 .editable {
