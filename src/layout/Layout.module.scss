@@ -1,62 +1,62 @@
 @use "../scssStyles" as *;
 
 .wrapper {
-    display: grid;
-    grid-template:
-        ". header header ." auto
-        ". sidebar body ." 1fr
-        "footer footer footer footer" auto
-        / auto 230px minmax(320px, 1200px) auto;
-    gap: 40px 30px;
-    min-height: 100vh;
+	display: grid;
+	grid-template:
+		". header header ." auto
+		". sidebar body ." 1fr
+		"footer footer footer footer" auto
+		/ auto 230px minmax(320px, 1200px) auto;
+	gap: 40px 30px;
+	min-height: 100vh;
 
-    .header {
-        grid-area: header;
-    }
+	.header {
+		grid-area: header;
+	}
 
-    .sidebar {
-        grid-area: sidebar;
-    }
+	.sidebar {
+		grid-area: sidebar;
+	}
 
-    .body {
-        grid-area: body;
-        outline: none;
-    }
+	.body {
+		grid-area: body;
+		outline: none;
+	}
 
-    .footer {
-        grid-area: footer;
-    }
+	.footer {
+		grid-area: footer;
+	}
 
-    .skipLink {
-        position: fixed;
-        top: 0;
-        left: 100px;
-        display: block;
-        height: 0;
-        overflow: hidden;
-        color: $white;
-        background: $primary;
+	.skipLink {
+		position: fixed;
+		top: 0;
+		left: 100px;
+		display: block;
+		height: 0;
+		overflow: hidden;
+		color: $white;
+		background: $primary;
 
-        &.displayed {
-            height: auto;
-        }
-    }
+		&.displayed {
+			height: auto;
+		}
+	}
 }
 
 @include for-size(tablet) {
-    .wrapper {
-        grid-template-areas:
-            "header"
-            "body"
-            "footer";
-        grid-template-columns: minmax(320px, 1fr);
+	.wrapper {
+		grid-template-areas:
+			"header"
+			"body"
+			"footer";
+		grid-template-columns: minmax(320px, 1fr);
 
-        .sidebar {
-            display: none;
-        }
+		.sidebar {
+			display: none;
+		}
 
-        .body {
-            padding: 15px;
-        }
-    }
+		.body {
+			padding: 15px;
+		}
+	}
 }

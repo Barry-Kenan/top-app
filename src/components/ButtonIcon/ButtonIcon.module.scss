@@ -23,16 +23,16 @@
 	&.white {
 		background-color: $white;
 
+		svg * {
+			fill: $primary;
+		}
+
 		&:hover {
 			background-color: $primary;
 
 			svg * {
 				fill: $white;
 			}
-		}
-
-		svg * {
-			fill: $primary;
 		}
 	}
 }
