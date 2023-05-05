@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { ForwardedRef, forwardRef, memo, useRef, useState } from "react";
 import styles from "./Product.module.scss";
 import cn from "classnames";
@@ -8,7 +9,6 @@ import Tag from "../Tag/Tag";
 import Divider from "../Divider/Divider";
 import Button from "../Button/Button";
 import { declOfNum, priceRu } from "@/helpers/helpers";
-import Image from "next/image";
 import Review from "../Review/Review";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import { motion } from "framer-motion";
@@ -42,7 +42,7 @@ const Product = motion(
                     <div className={className} ref={ref} {...props}>
                         <Card className={styles.product}>
                             <div className={styles.logo}>
-                                <Image
+                                <img
                                     src={
                                         process.env.NEXT_PUBLIC_DOMAIN +
                                         product.image

@@ -24,3 +24,13 @@ a {
 	height: 0;
 	overflow: hidden;
 }
+
+.about {
+	padding: 30px;
+	text-align: center;
+
+	h1 {
+		margin-bottom: 10px;
+		color: $primary;
+	}
+}

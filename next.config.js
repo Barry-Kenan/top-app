@@ -2,13 +2,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
 const nextConfig = {
-    reactStrictMode: true,
-    sassOptions: {
-        includePaths: [path.join(__dirname, "styles")],
-    },
-};
-
-module.exports = {
     images: {
         domains: ["courses-top.ru"],
     },
@@ -39,7 +32,10 @@ module.exports = {
 
         return config;
     },
-
-    // ...other config
-    nextConfig,
+    reactStrictMode: true,
+    sassOptions: {
+        includePaths: [path.join(__dirname, "styles")],
+    },
 };
+
+module.exports = nextConfig;

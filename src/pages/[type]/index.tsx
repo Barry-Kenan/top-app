@@ -7,9 +7,10 @@ import React from "react";
 import { API } from "@/helpers/api";
 import { withLayout } from "@/layout/Layout";
 import { TopLevelCategory } from "@/interfaces/page.interface";
+import { Htag } from "@/components";
 
 const Type = ({ firstCategory, menu }: TypeProps): JSX.Element => {
-    return <div>{TopLevelCategory[firstCategory]}</div>;
+    return <Htag tag="h1">{TopLevelCategory[firstCategory]}</Htag>;
 };
 
 export default withLayout(Type);
@@ -17,7 +18,7 @@ export default withLayout(Type);
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: firstLevelMenu.map((m) => `/${m.route}`),
-        fallback: true,
+        fallback: false,
     };
 };
 

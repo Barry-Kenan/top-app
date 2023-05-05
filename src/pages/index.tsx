@@ -1,4 +1,4 @@
-import { Button, Htag } from "@/components";
+import { Card, Htag, Tag } from "@/components";
 import { withLayout } from "@/layout/Layout";
 import { GetStaticProps } from "next";
 import axios from "axios";
@@ -6,13 +6,26 @@ import { MenuItem } from "@/interfaces/menu.interface";
 import { API } from "@/helpers/api";
 
 function Home({ menu }: HomeProps): JSX.Element {
+    const stack: string[] = [
+        "React",
+        "Typescript",
+        "NextJS",
+        "Hooks",
+        "react-hook-form",
+        "SSR",
+        "Grid",
+        "Axios",
+        "Framer-motion",
+    ];
     return (
-        <>
-            <Htag tag="h1">Hello Next </Htag>
-            <Button appearance="primary" arrow="down">
-                Primary button
-            </Button>
-        </>
+        <Card className="about">
+            <Htag tag="h1">Приложение top-app</Htag>
+            {stack.map((s) => (
+                <Tag key={s} color="primary">
+                    {s}
+                </Tag>
+            ))}
+        </Card>
     );
 }
 
